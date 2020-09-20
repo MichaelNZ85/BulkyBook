@@ -17,7 +17,7 @@ namespace BulkyBook.Areas.Identity
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<BulkyBookIdentityDbContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("BulkyBookIdentityDbContextConnection")));
+                        context.Configuration.GetConnectionString("DefaultConnection")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<BulkyBookIdentityDbContext>();
